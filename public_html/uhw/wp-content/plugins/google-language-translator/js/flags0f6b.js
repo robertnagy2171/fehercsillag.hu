@@ -1,6 +1,6 @@
 /*-------------------------------------------------------------------------------*
  * Script for onClick trigger functionality used by flag images
- * Script modified from original GTranslate plugin created by Edvard Ananyan at http://edo.webmaster.am
+ * Script modified from original GTranslate plugin created by Edvard Ananyan at https://edo.webmaster.am
  * GTranslate Free Version is licensed under GNU/GPL license
  *-------------------------------------------------------------------------------*/
 
