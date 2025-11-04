@@ -1,7 +1,7 @@
 /**
  * @package BasicGoogleMapsPlacemarks
  * @author Ian Dunn <ian@iandunn.name>
- * @link http://wordpress.org/extend/plugins/basic-google-maps-placemarks/
+ * @link https://wordpress.org/extend/plugins/basic-google-maps-placemarks/
  */
 
 
@@ -108,7 +108,7 @@ function bgmp_wrapper( $ )
 				return;
 			}
 			
-			$.bgmp.addPlacemarks( $.bgmp.map );		// @todo not supposed to add them when clustering is enabled? http://www.youtube.com/watch?v=Z2VF9uKbQjI
+			$.bgmp.addPlacemarks( $.bgmp.map );		// @todo not supposed to add them when clustering is enabled? https://www.youtube.com/watch?v=Z2VF9uKbQjI
 			
 			
 			// Activate marker clustering
@@ -134,7 +134,7 @@ function bgmp_wrapper( $ )
 		/**
 		 * Checks if the value is an integer. Slightly modified version of original.
 		 * @author Invent Partners
-		 * @link http://www.inventpartners.com/content/javascript_is_int
+		 * @link https://www.inventpartners.com/content/javascript_is_int
 		 * @param mixed value
 		 * @return bool
 		 */

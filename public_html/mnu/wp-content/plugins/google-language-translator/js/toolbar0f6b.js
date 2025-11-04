@@ -2,14 +2,14 @@
  * Toolbar.js
  *
  * @fileoverview  jQuery plugin that creates tooltip style toolbars.
- * @link          http://paulkinzett.github.com/toolbar/
- * @author        Paul Kinzett (http://kinzett.co.nz/)
+ * @link          https://paulkinzett.github.com/toolbar/
+ * @author        Paul Kinzett (https://kinzett.co.nz/)
  * @version       1.0.4
  * @requires      jQuery 1.7+
  *
  * @license jQuery Toolbar Plugin v1.0.4
- * http://paulkinzett.github.com/toolbar/
- * Copyright 2013 Paul Kinzett (http://kinzett.co.nz/)
+ * https://paulkinzett.github.com/toolbar/
+ * Copyright 2013 Paul Kinzett (https://kinzett.co.nz/)
  * Released under the MIT license.
  * <https://raw.github.com/paulkinzett/toolbar/master/LICENSE.txt>
  */
