@@ -1,28 +1,33 @@
-import express from "express";
-import path from "path";
-import { fileURLToPath } from "url";
+const express = require("express");
+const auth = require("basic-auth");
+const path = require("path");
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
 
-const USER = process.env.BASIC_AUTH_USER;
-const PASS = process.env.BASIC_AUTH_PASS;
+// Credentials from environment variables
+const USERNAME = process.env.BASIC_AUTH_USER;
+const PASSWORD = process.env.BASIC_AUTH_PASS;
 
+// Basic Auth middleware
 app.use((req, res, next) => {
-  const auth = { login: USER, password: PASS };
-  const b64auth = (req.headers.authorization || "").split(" ")[1] || "";
-  const [login, password] = Buffer.from(b64auth, "base64").toString().split(":");
-
-  if (login && password && login === auth.login && password === auth.password) {
-    return next();
+  const user = auth(req);
+  if (!user || user.name !== USERNAME || user.pass !== PASSWORD) {
+    res.set("WWW-Authenticate", 'Basic realm="Restricted"');
+    return res.status(401).send("Authentication required.");
   }
-
-  res.set("WWW-Authenticate", 'Basic realm="Protected"');
-  res.status(401).send("Authentication required.");
+  next();
 });
 
-app.use(express.static(path.join(__dirname, "public_html"))); // your static files
+// Serve static files
+const staticPath = path.join(__dirname, "dist");
+app.use(express.static(staticPath));
 
-const port = process.env.PORT || 10000;
-app.listen(port, () => console.log(`Running on port ${port}`));
+// Fallback for SPA routing
+app.get("*", (req, res) => {
+  res.sendFile(path.join(staticPath, "index.html"));
+});
+
+// Start server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
