@@ -19,7 +19,7 @@ app.use((req, res, next) => {
 });
 
 // Serve static files
-const staticPath = path.join(__dirname, "dist");
+const staticPath = path.join(__dirname, "public_html");
 app.use(express.static(staticPath));
 
 // Fallback for SPA routing
